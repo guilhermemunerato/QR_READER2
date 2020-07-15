@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-title style="text-align: center;">
+      Histórico
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="medium" class="ion-justify-content-center">
+
+  <ion-item-sliding *ngFor="let historico of listaHistoricos">
+    <ion-item lines="full">
+      <div slot="start">
+        <br />
+        <br />
+        <ion-icon color="success" name="qr-code"></ion-icon>
+      </div>
+      <ion-label>
+        <div>
+          <p class="ion-text-right line">
+            {{historico.dataHora | date :'short':'':'pt'}}
+          </p>
+          <p class="resultado">
+            {{historico.leitura}}
+          </p>
+        </div>
+      </ion-label>
+      <div slot="end">
+        <ion-icon color="primary" name="calendar"></ion-icon>
+        <br />
+        <br />
+      </div>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="deletar(historico.$key)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+</ion-content>

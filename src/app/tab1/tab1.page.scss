@@ -1,0 +1,26 @@
+.screen {
+    width: 99vw;
+    height: 99vh;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
+.scan {
+    height: calc(99vw - 15%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 30px;
+    border: 4px dashed #ff0000;
+    border-radius: 10px;
+
+    img {
+        height: 90%;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+}

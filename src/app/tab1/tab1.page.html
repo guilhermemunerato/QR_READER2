@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title style="text-align: center;">
+      QRScanner
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="medium" class="ion-justify-content-center">
+
+</ion-content>
+
+<div class="screen">
+  <div class="scan">
+    <img id="logo" src="assets/icon.png">
+  </div>
+</div>
+
+<ion-footer class="ion-no-border" id="footer">
+  <ion-item *ngIf="link">
+    <ion-label>
+      <a [href]="leitura" target="_blank">{{leitura}}</a>
+    </ion-label>
+  </ion-item>
+
+  <ion-item *ngIf="leitura">
+    <ion-label position="stacked"></ion-label>
+    <ion-input [(ngModel)]="leitura"></ion-input>
+  </ion-item>
+  
+  <ion-toolbar color="dark">
+    <ion-button color="succsess"expand="block" (click)="StartScanning()">QRScanner</ion-button>
+  </ion-toolbar>
+</ion-footer>
